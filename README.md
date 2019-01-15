@@ -77,7 +77,9 @@ Relatório de Conquistas - Funcionalidade do Sistema
         - Quantidade de pessoas que já votaram          ✓
     - organização da quantidade de votos por candidato  x
                  
-       
+---------------------------------------------------------------------------------------
+               Hospedagem do sistema
+                   -procurando
 
  --------------------------------------------------------------------------------------
  OBS: Linguagens aprendidados durante o desenvolvimento
