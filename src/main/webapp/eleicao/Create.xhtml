@@ -3,7 +3,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough">
 
     <ui:composition template="/template.xhtml">
         <ui:define name="title">
@@ -18,11 +19,11 @@
                     <h:outputLabel value="#{bundle.CreateEleicaoLabel_nome}" for="nome" />
                     <h:inputText id="nome" value="#{eleicaoController.selected.nome}" title="#{bundle.CreateEleicaoTitle_nome}" required="true" requiredMessage="#{bundle.CreateEleicaoRequiredMessage_nome}"/>
                     <h:outputLabel value="#{bundle.CreateEleicaoLabel_dataInicio}" for="dataInicio" />
-                    <h:inputText id="dataInicio" value="#{eleicaoController.selected.dataInicio}" title="#{bundle.CreateEleicaoTitle_dataInicio}" required="true" requiredMessage="#{bundle.CreateEleicaoRequiredMessage_dataInicio}">
-                        <f:convertDateTime pattern="dd/MM/yyyy" />
+                    <h:inputText id="dataInicio" value="#{eleicaoController.selected.dataInicio}"  title="#{bundle.CreateEleicaoTitle_dataInicio}" required="true" requiredMessage="#{bundle.CreateEleicaoRequiredMessage_dataInicio}" class="formatedDate">
+                        <f:convertDateTime pattern="dd/MM/yyyy" dateStyle="default" locale="pt" />
                     </h:inputText>
                     <h:outputLabel value="#{bundle.CreateEleicaoLabel_dataFim}" for="dataFim" />
-                    <h:inputText id="dataFim" value="#{eleicaoController.selected.dataFim}" title="#{bundle.CreateEleicaoTitle_dataFim}" required="true" requiredMessage="#{bundle.CreateEleicaoRequiredMessage_dataFim}">
+                    <h:inputText id="dataFim" value="#{eleicaoController.selected.dataFim}" title="#{bundle.CreateEleicaoTitle_dataFim}" required="true" requiredMessage="#{bundle.CreateEleicaoRequiredMessage_dataFim}" class="formatedDate">
                         <f:convertDateTime pattern="dd/MM/yyyy" />
                     </h:inputText>
                 </h:panelGrid>

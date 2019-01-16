@@ -18,7 +18,8 @@
                     <h:outputLabel value="#{bundle.CreateEleitorLabel_nome}" for="nome" />
                     <h:inputText id="nome" value="#{eleitorController.selected.nome}" title="#{bundle.CreateEleitorTitle_nome}" required="true" requiredMessage="#{bundle.CreateEleitorRequiredMessage_nome}"/>
                     <h:outputLabel value="#{bundle.CreateEleitorLabel_cpf}" for="cpf" />
-                    <h:inputText id="cpf" value="#{eleitorController.selected.cpf}" title="#{bundle.CreateEleitorTitle_cpf}" required="true" requiredMessage="#{bundle.CreateEleitorRequiredMessage_cpf}"/>
+                    <h:inputText id="cpf" value="#{eleitorController.selected.cpf}" title="#{bundle.CreateEleitorTitle_cpf}" required="true" requiredMessage="#{bundle.CreateEleitorRequiredMessage_cpf}"   class="formatedCPF"/>
+                    <!--
                     <h:outputLabel value="#{bundle.CreateEleitorLabel_candidato}" for="candidato" />
                     <h:selectOneMenu id="candidato" value="#{eleitorController.selected.candidato}" title="#{bundle.CreateEleitorTitle_candidato}" required="true" requiredMessage="#{bundle.CreateEleitorRequiredMessage_candidato}">
                         <f:selectItems value="#{candidatoController.itemsAvailableSelectOne}"/>
@@ -26,7 +27,7 @@
                     <h:outputLabel value="#{bundle.CreateEleitorLabel_eleicao}" for="eleicao" />
                     <h:selectOneMenu id="eleicao" value="#{eleitorController.selected.eleicao}" title="#{bundle.CreateEleitorTitle_eleicao}" required="true" requiredMessage="#{bundle.CreateEleitorRequiredMessage_eleicao}">
                         <f:selectItems value="#{eleicaoController.itemsAvailableSelectOne}"/>
-                    </h:selectOneMenu>
+                    </h:selectOneMenu>-->
                 </h:panelGrid>
                 <br />
                 <h:commandLink action="#{eleitorController.create}" value="#{bundle.CreateEleitorSaveLink}" />
@@ -35,7 +36,11 @@
                 <h:commandLink action="#{eleitorController.prepareList}" value="#{bundle.CreateEleitorShowAllLink}" immediate="true"/>
                 <br />
                 <br />
+                 <h:commandLink action="#{votarController.create}" value="#{bundle.CreateVotarSaveLink}" />
+                <br />
+                <br />
                 <h:link outcome="/index" value="#{bundle.CreateEleitorIndexLink}"/>
+               
             </h:form></center>
         </ui:define>
     </ui:composition>

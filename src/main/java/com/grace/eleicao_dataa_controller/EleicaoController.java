@@ -123,7 +123,7 @@ public class EleicaoController implements Serializable {
         if (selectedItemIndex >= 0) {
             return "View";
         } else {
-            // all items were removed - go back to list
+            //Todos os itens serão removidos
             recreateModel();
             return "List";
         }
@@ -141,9 +141,9 @@ public class EleicaoController implements Serializable {
     private void updateCurrentItem() {
         int count = getFacade().count();
         if (selectedItemIndex >= count) {
-            // selected index cannot be bigger than number of items:
+            // Index selecionado não pode ultrapassar a quantidade de itens
             selectedItemIndex = count - 1;
-            // go to previous page if last page disappeared:
+            // Volta a página anterior se a última páginar fechar
             if (pagination.getPageFirstItem() >= count) {
                 pagination.previousPage();
             }

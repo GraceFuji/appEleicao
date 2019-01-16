@@ -19,4 +19,10 @@
         </p>
     </h:body>
 
+    <h:outputScript library="js" name="jquery/jquery.min.js"/>
+    <h:outputScript library="js" name="jquery/jquery.mask.min.js"/>
+    <script>
+        $('.formatedDate').mask('00/00/0000');
+        $('.formatedCPF').mask('000.000.000-00');
+    </script>
 </html>

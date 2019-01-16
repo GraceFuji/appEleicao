@@ -6,6 +6,8 @@
 package com.grace.eleicao_dataa_entities;
 
 import java.io.Serializable;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.CascadeType;
@@ -70,6 +72,7 @@ public class Eleicao implements Serializable {
     }
 
     public Eleicao(Integer id, String nome, Date dataInicio, Date dataFim) {
+        SimpleDateFormat DateFormat = new SimpleDateFormat("dd/MM/yyyy");
         this.id = id;
         this.nome = nome;
         this.dataInicio = dataInicio;

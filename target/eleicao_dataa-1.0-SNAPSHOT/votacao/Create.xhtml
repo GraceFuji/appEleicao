@@ -18,11 +18,12 @@
                     <h:outputLabel value="#{bundle.CreateVotarLabel_nome}" for="nome" />
                     <h:inputText id="nome" value="#{votarController.selected.nome}" title="#{bundle.CreateVotarTitle_nome}" required="true" requiredMessage="#{bundle.CreateVotarRequiredMessage_nome}"/>
                     <h:outputLabel value="#{bundle.CreateVotarLabel_cpf}" for="cpf" />
-                    <h:inputText id="cpf" value="#{votarController.selected.cpf}" title="#{bundle.CreateVotarTitle_cpf}" required="true" requiredMessage="#{bundle.CreateVotarRequiredMessage_cpf}"/>
-                    <h:outputLabel value="#{bundle.CreateEleitorLabel_candidato}" for="candidato" />
+                    <h:inputText id="cpf" value="#{votarController.selected.cpf}" title="#{bundle.CreateVotarTitle_cpf}" required="true"/>
+                     
+   <!--                    <h:outputLabel value="#{bundle.CreateEleitorLabel_candidato}" for="candidato" />
                     <h:selectOneMenu id="candidato" value="#{eleitorController.selected.candidato}" title="#{bundle.CreateEleitorTitle_candidato}" required="true" requiredMessage="#{bundle.CreateEleitorRequiredMessage_candidato}">
                         <f:selectItems value="#{candidatoController.itemsAvailableSelectOne}"/>
-                    </h:selectOneMenu>
+                    </h:selectOneMenu>-->
                    </h:panelGrid>
                 <br />
                 <h:commandLink action="#{votarController.create}" value="#{bundle.CreateVotarSaveLink}" />

@@ -21,11 +21,11 @@
                     <h:inputText id="nome" value="#{eleicaoController.selected.nome}" title="#{bundle.EditEleicaoTitle_nome}" required="true" requiredMessage="#{bundle.EditEleicaoRequiredMessage_nome}"/>
                     <h:outputLabel value="#{bundle.EditEleicaoLabel_dataInicio}" for="dataInicio" />
                     <h:inputText id="dataInicio" value="#{eleicaoController.selected.dataInicio}" title="#{bundle.EditEleicaoTitle_dataInicio}" required="true" requiredMessage="#{bundle.EditEleicaoRequiredMessage_dataInicio}">
-                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                        <f:convertDateTime pattern="dd/MM/yyyy" />
                     </h:inputText>
                     <h:outputLabel value="#{bundle.EditEleicaoLabel_dataFim}" for="dataFim" />
                     <h:inputText id="dataFim" value="#{eleicaoController.selected.dataFim}" title="#{bundle.EditEleicaoTitle_dataFim}" required="true" requiredMessage="#{bundle.EditEleicaoRequiredMessage_dataFim}">
-                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                        <f:convertDateTime pattern="dd/MM/yyyy" />
                     </h:inputText>
                     <h:outputLabel value="#{bundle.EditEleicaoLabel_eleitor}" for="eleitor" />
                     <h:selectOneMenu id="eleitor" value="#{eleicaoController.selected.eleitor}" title="#{bundle.EditEleicaoTitle_eleitor}" >

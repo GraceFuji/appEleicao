@@ -15,6 +15,7 @@ a {
 
 table {
     empty-cells: show;
+    width: 100%;
 }
 
 form.jsfcrud_list_form th, td th {
@@ -34,10 +35,7 @@ form.jsfcrud_list_form th, td th {
     border-right-color: #90b4bd;
     letter-spacing: 3px;
     text-align: left;
-    padding-top: 6px;
-    padding-bottom: 6px;
-    padding-left: 6px;
-    padding-right: 6px;
+    padding: 20px;
     background-color: #b2d5d6;
 }
 
@@ -80,3 +78,8 @@ tr.jsfcrud_even_row {
     left: 50%;
     top: 50%;
 }
+
+firldset {
+    border-radius: 20px;
+}
+
