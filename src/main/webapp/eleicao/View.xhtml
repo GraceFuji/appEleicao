@@ -7,43 +7,50 @@
 
     <ui:composition template="/template.xhtml">
         <ui:define name="title">
-            <h:outputText value="#{bundle.ViewEleicaoTitle}"></h:outputText>
+            <center>
+                 <h:outputText value="#{bundle.ViewEleicaoTitle}"></h:outputText>
+            </center>
         </ui:define>
+        
+        <!--Exibição da mensagem de erro-->
+        
         <ui:define name="body">
             <h:panelGroup id="messagePanel" layout="block">
                 <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
             </h:panelGroup>
-            <h:form>
-                <h:panelGrid columns="2">
-                    <h:outputText value="#{bundle.ViewEleicaoLabel_id}"/>
-                    <h:outputText value="#{eleicaoController.selected.id}" title="#{bundle.ViewEleicaoTitle_id}"/>
-                    <h:outputText value="#{bundle.ViewEleicaoLabel_nome}"/>
-                    <h:outputText value="#{eleicaoController.selected.nome}" title="#{bundle.ViewEleicaoTitle_nome}"/>
-                    <h:outputText value="#{bundle.ViewEleicaoLabel_dataInicio}"/>
-                    <h:outputText value="#{eleicaoController.selected.dataInicio}" title="#{bundle.ViewEleicaoTitle_dataInicio}">
-                        <f:convertDateTime pattern="dd/MM/yyyy" />
-                    </h:outputText>
-                    <h:outputText value="#{bundle.ViewEleicaoLabel_dataFim}"/>
-                    <h:outputText value="#{eleicaoController.selected.dataFim}" title="#{bundle.ViewEleicaoTitle_dataFim}">
-                        <f:convertDateTime pattern="dd/MM/yyyy" />
-                    </h:outputText>
-                    <h:outputText value="#{bundle.ViewEleicaoLabel_eleitor}"/>
-                    <h:outputText value="#{eleicaoController.selected.eleitor}" title="#{bundle.ViewEleicaoTitle_eleitor}"/>
-                </h:panelGrid>
-                <br />
-                <h:commandLink action="#{eleicaoController.destroyAndView}" value="#{bundle.ViewEleicaoDestroyLink}"/>
-                <br />
-                <br />
-                <h:link outcome="Edit" value="#{bundle.ViewEleicaoEditLink}"/>
-                <br />
-                <h:commandLink action="#{eleicaoController.prepareCreate}" value="#{bundle.ViewEleicaoCreateLink}" />
-                <br />
-                <h:commandLink action="#{eleicaoController.prepareList}" value="#{bundle.ViewEleicaoShowAllLink}"/>
-                <br />
-                <br />
-                <h:link outcome="/index" value="#{bundle.ViewEleicaoIndexLink}"/>
-
-            </h:form>
+            
+          <!--Painel com os dados-->
+            <center>
+                <h:form style="width: 80%;border:solid #b2d5d6 12px;">
+                    <h:panelGrid columns="5" cellpadding="10" cellspacing="1">
+                        <h:outputText value="#{bundle.ViewEleicaoLabel_id}"/>
+                        <h:outputText value="#{bundle.ViewEleicaoLabel_nome}"/>
+                        <h:outputText value="#{bundle.ViewEleicaoLabel_dataFim}"/>
+                        <h:outputText value="#{bundle.ViewEleicaoLabel_dataInicio}"/>
+                        <h:outputText value="#{bundle.ViewEleicaoLabel_eleitor}"/>
+                        <h:outputText value="#{eleicaoController.selected.id}" title="#{bundle.ViewEleicaoTitle_id}"/>
+                        <h:outputText value="#{eleicaoController.selected.nome}" title="#{bundle.ViewEleicaoTitle_nome}"/>
+                        <h:outputText value="#{eleicaoController.selected.dataInicio}" title="#{bundle.ViewEleicaoTitle_dataInicio}">
+                            <f:convertDateTime pattern="dd/MM/yyyy" />
+                        </h:outputText>
+                        <h:outputText value="#{eleicaoController.selected.dataFim}" title="#{bundle.ViewEleicaoTitle_dataFim}">
+                            <f:convertDateTime pattern="dd/MM/yyyy" />
+                        </h:outputText>
+                        <h:outputText value="#{eleicaoController.selected.eleitor}" title="#{bundle.ViewEleicaoTitle_eleitor}"/>
+                    </h:panelGrid>
+                    <hr/>
+                    <h2>
+                        <h:panelGrid columns="5" cellpadding="15" cellspacing="1">
+                            <h:commandLink action="#{eleicaoController.prepareList}" value="#{bundle.ViewEleicaoShowAllLink}"/>
+                            <h:commandLink action="#{eleicaoController.prepareCreate}" value="#{bundle.ViewEleicaoCreateLink}" />
+                            <h:commandLink action="#{eleicaoController.destroyAndView}" value="#{bundle.ViewEleicaoDestroyLink}"/>
+                            <h:link outcome="Edit" value="#{bundle.ViewEleicaoEditLink}"/>
+                            <h:link outcome="/index" value="#{bundle.ViewEleicaoIndexLink}"/>
+                        </h:panelGrid> 
+                   
+                    </h2>
+                </h:form>
+          </center>
         </ui:define>
     </ui:composition>
 

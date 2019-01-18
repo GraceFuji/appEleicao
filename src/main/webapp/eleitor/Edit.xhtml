@@ -7,14 +7,14 @@
 
     <ui:composition template="/template.xhtml">
         <ui:define name="title">
-            <h:outputText value="#{bundle.EditEleitorTitle}"></h:outputText>
+            <center><h:outputText value="#{bundle.EditEleitorTitle}"/></center>
         </ui:define>
         <ui:define name="body">
             <h:panelGroup id="messagePanel" layout="block">
                 <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
             </h:panelGroup>
-            <h:form>
-                <h:panelGrid columns="2">
+            <h:form style="width: 80%;border:solid #b2d5d6 3px;padding: 20px 40px 20px 20px;margin-left: 60px">
+                <h:panelGrid columns="2" style="position: relative;left: 200px;padding: 30px;">
                     <h:outputLabel value="#{bundle.EditEleitorLabel_id}" for="id" />
                     <h:inputText id="id" value="#{eleitorController.selected.id}" title="#{bundle.EditEleitorTitle_id}" required="true" requiredMessage="#{bundle.EditEleitorRequiredMessage_id}"/>
                     <h:outputLabel value="#{bundle.EditEleitorLabel_nome}" for="nome" />
@@ -30,15 +30,13 @@
                         <f:selectItems value="#{eleicaoController.itemsAvailableSelectOne}"/>
                     </h:selectOneMenu>
                 </h:panelGrid>
-                <h:commandLink action="#{eleitorController.update}" value="#{bundle.EditEleitorSaveLink}"/>
-                <br />
-                <br />
-                <h:link outcome="View" value="#{bundle.EditEleitorViewLink}"/>
-                <br />
+                <hr/>
+                <h:panelGrid columns="4">
                 <h:commandLink action="#{eleitorController.prepareList}" value="#{bundle.EditEleitorShowAllLink}" immediate="true"/>
-                <br />
-                <br />
+                <h:commandLink action="#{eleitorController.update}" value="#{bundle.EditEleitorSaveLink}"/>
+                <h:link outcome="View" value="#{bundle.EditEleitorViewLink}"/>
                 <h:link outcome="/index" value="#{bundle.EditEleitorIndexLink}" />
+                </h:panelGrid>
             </h:form>
         </ui:define>
     </ui:composition>

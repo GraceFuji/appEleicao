@@ -7,34 +7,33 @@
 
     <ui:composition template="/template.xhtml">
         <ui:define name="title">
-            <h:outputText value="#{bundle.ViewCandidatoTitle}"></h:outputText>
+            <center><h:outputText value="#{bundle.ViewCandidatoTitle}"/></center>
         </ui:define>
         <ui:define name="body">
+            
+            <!--Exibição da mensagem de erro-->
+            
             <h:panelGroup id="messagePanel" layout="block">
                 <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
             </h:panelGroup>
-            <h:form>
-                <h:panelGrid columns="2">
+            
+            <h:form style="width: 80%;border:solid #b2d5d6 3px;padding: 20px 40px 20px 20px;margin-left: 60px">
+                <h:panelGrid columns="3">
                     <h:outputText value="#{bundle.ViewCandidatoLabel_id}"/>
-                    <h:outputText value="#{candidatoController.selected.id}" title="#{bundle.ViewCandidatoTitle_id}"/>
                     <h:outputText value="#{bundle.ViewCandidatoLabel_nome}"/>
-                    <h:outputText value="#{candidatoController.selected.nome}" title="#{bundle.ViewCandidatoTitle_nome}"/>
                     <h:outputText value="#{bundle.ViewCandidatoLabel_cargo}"/>
+                    <h:outputText value="#{candidatoController.selected.id}" title="#{bundle.ViewCandidatoTitle_id}"/>
+                    <h:outputText value="#{candidatoController.selected.nome}" title="#{bundle.ViewCandidatoTitle_nome}"/>
                     <h:outputText value="#{candidatoController.selected.cargo}" title="#{bundle.ViewCandidatoTitle_cargo}"/>
                 </h:panelGrid>
-                <br />
-                <h:commandLink action="#{candidatoController.destroyAndView}" value="#{bundle.ViewCandidatoDestroyLink}"/>
-                <br />
-                <br />
-                <h:link outcome="Edit" value="#{bundle.ViewCandidatoEditLink}"/>
-                <br />
+                <hr />
+                <h:panelGrid columns="5" cellpadding="14" cellspacing="2">
                 <h:commandLink action="#{candidatoController.prepareCreate}" value="#{bundle.ViewCandidatoCreateLink}" />
-                <br />
                 <h:commandLink action="#{candidatoController.prepareList}" value="#{bundle.ViewCandidatoShowAllLink}"/>
-                <br />
-                <br />
+                <h:commandLink action="#{candidatoController.destroyAndView}" value="#{bundle.ViewCandidatoDestroyLink}"/>
+                <h:link outcome="Edit" value="#{bundle.ViewCandidatoEditLink}"/>
                 <h:link outcome="/index" value="#{bundle.ViewCandidatoIndexLink}"/>
-
+                </h:panelGrid>
             </h:form>
         </ui:define>
     </ui:composition>

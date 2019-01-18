@@ -7,28 +7,34 @@
 
     <ui:composition template="/template.xhtml">
         <ui:define name="title">
-            <h:outputText value="#{bundle.CreateCargoTitle}"></h:outputText>
+            <center><h:outputText value="#{bundle.CreateCargoTitle}"/></center>
         </ui:define>
+        
         <ui:define name="body">
+            <!--Exibição da mensagem de erro-->
+            
             <h:panelGroup id="messagePanel" layout="block">
                 <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
             </h:panelGroup>
-            <center>
-                <h:form>
-                        <h:panelGrid columns="2">
+            
+                <h:form style="width: 80%;border:solid #b2d5d6 3px;padding: 20px 40px 20px 20px;margin-left: 60px">
+                    <center>
+                        <h:panelGrid columns="4">
                             <h:outputLabel value="#{bundle.CreateCargoLabel_nome}" for="nome" />
                             <h:inputText id="nome" value="#{cargoController.selected.nome}" title="#{bundle.CreateCargoTitle_nome}" required="true" requiredMessage="#{bundle.CreateCargoRequiredMessage_nome}"/>
-                        </h:panelGrid>
-                    <br />
+                        </h:panelGrid></center>
+                    <hr /><center><h3>
+                        <h:panelGrid columns="3" style="alignment-adjust: central;">
+                        
                         <h:commandLink action="#{cargoController.create}" value="#{bundle.CreateCargoSaveLink}" />
-                    <br />
-                    <br />
+
                         <h:commandLink action="#{cargoController.prepareList}" value="#{bundle.CreateCargoShowAllLink}" immediate="true"/>
-                    <br />
-                    <br />
+
                         <h:link outcome="/index" value="#{bundle.CreateCargoIndexLink}"/>
+                        </h:panelGrid></h3>
+                    </center>
                 </h:form>
-            </center>
+                 
         </ui:define>
     </ui:composition>
 

@@ -7,40 +7,37 @@
 
     <ui:composition template="/template.xhtml">
         <ui:define name="title">
-            <h:outputText value="#{bundle.CreateEleitorTitle}"></h:outputText>
+            <center><h:outputText value="#{bundle.CreateEleitorTitle}"/></center>
         </ui:define>
+        
+        <!--Exibição da mensagem de erro-->
+        
         <ui:define name="body">
             <h:panelGroup id="messagePanel" layout="block">
                 <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
             </h:panelGroup><center>
-            <h:form>
-                <h:panelGrid columns="2">
+            <h:form style="width: 80%;border:solid #b2d5d6 3px;padding: 20px 40px 20px 20px;margin-left: 60px">
+                <h:panelGrid columns="2" style="position: relative;left: 250px;">
                     <h:outputLabel value="#{bundle.CreateEleitorLabel_nome}" for="nome" />
                     <h:inputText id="nome" value="#{eleitorController.selected.nome}" title="#{bundle.CreateEleitorTitle_nome}" required="true" requiredMessage="#{bundle.CreateEleitorRequiredMessage_nome}"/>
                     <h:outputLabel value="#{bundle.CreateEleitorLabel_cpf}" for="cpf" />
                     <h:inputText id="cpf" value="#{eleitorController.selected.cpf}" title="#{bundle.CreateEleitorTitle_cpf}" required="true" requiredMessage="#{bundle.CreateEleitorRequiredMessage_cpf}"   class="formatedCPF"/>
-                    <!--
+                 
                     <h:outputLabel value="#{bundle.CreateEleitorLabel_candidato}" for="candidato" />
-                    <h:selectOneMenu id="candidato" value="#{eleitorController.selected.candidato}" title="#{bundle.CreateEleitorTitle_candidato}" required="true" requiredMessage="#{bundle.CreateEleitorRequiredMessage_candidato}">
+                    <h:selectOneMenu value="#{eleitorController.selected.candidato}" title="#{bundle.CreateEleitorTitle_candidato}" required="true" requiredMessage="#{bundle.CreateEleitorRequiredMessage_candidato}">
                         <f:selectItems value="#{candidatoController.itemsAvailableSelectOne}"/>
                     </h:selectOneMenu>
                     <h:outputLabel value="#{bundle.CreateEleitorLabel_eleicao}" for="eleicao" />
                     <h:selectOneMenu id="eleicao" value="#{eleitorController.selected.eleicao}" title="#{bundle.CreateEleitorTitle_eleicao}" required="true" requiredMessage="#{bundle.CreateEleitorRequiredMessage_eleicao}">
                         <f:selectItems value="#{eleicaoController.itemsAvailableSelectOne}"/>
-                    </h:selectOneMenu>-->
+                    </h:selectOneMenu>
                 </h:panelGrid>
-                <br />
-                <h:commandLink action="#{eleitorController.create}" value="#{bundle.CreateEleitorSaveLink}" />
-                <br />
-                <br />
+                <hr />
+                <h:panelGrid columns="4">
                 <h:commandLink action="#{eleitorController.prepareList}" value="#{bundle.CreateEleitorShowAllLink}" immediate="true"/>
-                <br />
-                <br />
-                 <h:commandLink action="#{votarController.create}" value="#{bundle.CreateVotarSaveLink}" />
-                <br />
-                <br />
-                <h:link outcome="/index" value="#{bundle.CreateEleitorIndexLink}"/>
-               
+                <h:commandLink action="#{eleitorController.create}" value="#{bundle.CreateEleitorSaveLink}" style="position: relative;left:40px;"/>
+                <h:link style="position: relative;left: 30px;" outcome="/votacao/Create" value="#{bundle.CreateVotarTitle}"/>
+                </h:panelGrid>
             </h:form></center>
         </ui:define>
     </ui:composition>

@@ -22,51 +22,41 @@
                  <tr>
                      <!--Campo correspondente ao Cadastro das Eleições-->
                      <td>
-                         <fieldset>
-                             <center>
-                            <h2><h:link outcome="/eleicao/List" value="Cadastro de Eleições"/></h2>
-                             </center>
-                         </fieldset>
+                        <center>
+                            <h3><h:link outcome="/eleicao/List" value="Cadastro de Eleições"/></h3>
+                        </center>
                      </td>
                      
                      <!--Campo correspondente ao Cadastro do cargo a ser concorrido na eleição-->
                      
                      <td colspan="3">
-                         <fieldset>
-                             <center>
-                                 <h2><h:link outcome="/cargo/List" value="Cadastro de Cargo"/></h2>
-                             </center>
-                         </fieldset>
+                        <center>
+                                 <h3><h:link outcome="/cargo/List" value="Cadastro de Cargo"/></h3>
+                        </center>
                      </td>
                      
                      <!--Campo correspondente ao Cadastro do Candidato da eleição-->
                      
                      <td colspan="3">
-                         <fieldset>
-                             <center>
-                            <h2><h:link outcome="/candidato/List" value="Cadastro de Candidato"/></h2>
-                             </center>
-                         </fieldset>
+                        <center>
+                            <h3><h:link outcome="/candidato/List" value="Cadastro de Candidato"/></h3>
+                        </center>
                      </td>
                      
                      <!--Campo correspondente ao Cadastro do eleitor-->
                      
                      <td colspan="3">
-                         <fieldset>
-                             <center>
-                            <h2><h:link outcome="/eleitor/List" value="Cadastro Eleitor"/></h2>
-                             </center>
-                         </fieldset>
+                        <center>
+                            <h3><h:link outcome="/eleitor/List" value="Cadastro Eleitor"/></h3>
+                        </center>
                      </td>
                      
                      <!--Campo correspondente ao relatório dos votos-->
                      
                      <td colspan="3">
-                         <fieldset>
-                             <center>
-                            <h2><h:link outcome="/votacao/List" value="Relatório de Eleitores Inscritos"/></h2>
-                            </center>
-                         </fieldset>
+                        <center>
+                            <h3><h:link outcome="/votacao/List" value="Relatórios"/></h3>
+                        </center>
                      </td>
                 </tr>
             </table>
@@ -138,7 +128,7 @@
                         <h:column>
                             <center>
                                 <f:facet name="header">
-                                    <center><h:outputText value="#{bundle.CreateVotarIndexLink}"/></center>
+                                    <center><h:outputText value="Cadastro de Voto"/></center>
                                 </f:facet>
                                     <h:outputText value=""/>
                                     <h4>
@@ -154,7 +144,7 @@
                 <!--Botão que redireciona para a página de criação de eleição-->
                 
                 <h3>
-                    <h:commandLink class="novaeleicao" action="/eleicao/Create" value="#{bundle.ListEleicaoCreateLink}"/>
+                    <h:commandLink action="/eleicao/Create" value="#{bundle.ListEleicaoCreateLink}"/>
                 </h3>
              </h:form>
             </center>

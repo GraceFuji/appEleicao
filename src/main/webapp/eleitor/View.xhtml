@@ -2,43 +2,40 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
 
     <ui:composition template="/template.xhtml">
         <ui:define name="title">
-            <h:outputText value="#{bundle.ViewEleitorTitle}"></h:outputText>
+            <center><h:outputText value="#{bundle.ViewEleitorTitle}"/></center>
         </ui:define>
+        
+        <!--Exibição da mensagem de erro-->
+        
         <ui:define name="body">
             <h:panelGroup id="messagePanel" layout="block">
                 <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
             </h:panelGroup>
-            <h:form>
-                <h:panelGrid columns="2">
+            <h:form style="width: 80%;border:solid #b2d5d6 3px;padding: 20px 40px 20px 20px;margin-left: 60px">
+                <h:panelGrid columns="5" style="position: relative;left: 20px;padding: 30px;">
                     <h:outputText value="#{bundle.ViewEleitorLabel_id}"/>
-                    <h:outputText value="#{eleitorController.selected.id}" title="#{bundle.ViewEleitorTitle_id}"/>
                     <h:outputText value="#{bundle.ViewEleitorLabel_nome}"/>
-                    <h:outputText value="#{eleitorController.selected.nome}" title="#{bundle.ViewEleitorTitle_nome}"/>
                     <h:outputText value="#{bundle.ViewEleitorLabel_cpf}"/>
-                    <h:outputText value="#{eleitorController.selected.cpf}" title="#{bundle.ViewEleitorTitle_cpf}"/>
                     <h:outputText value="#{bundle.ViewEleitorLabel_candidato}"/>
-                    <h:outputText value="#{eleitorController.selected.candidato}" title="#{bundle.ViewEleitorTitle_candidato}"/>
                     <h:outputText value="#{bundle.ViewEleitorLabel_eleicao}"/>
+                    <h:outputText value="#{eleitorController.selected.id}" title="#{bundle.ViewEleitorTitle_id}"/>
+                    <h:outputText value="#{eleitorController.selected.nome}" title="#{bundle.ViewEleitorTitle_nome}"/>
+                    <h:outputText value="#{eleitorController.selected.cpf}" title="#{bundle.ViewEleitorTitle_cpf}"/>
+                    <h:outputText value="#{eleitorController.selected.candidato}" title="#{bundle.ViewEleitorTitle_candidato}"/>
                     <h:outputText value="#{eleitorController.selected.eleicao}" title="#{bundle.ViewEleitorTitle_eleicao}"/>
                 </h:panelGrid>
-                <br />
-                <h:commandLink action="#{eleitorController.destroyAndView}" value="#{bundle.ViewEleitorDestroyLink}"/>
-                <br />
-                <br />
-                <h:link outcome="Edit" value="#{bundle.ViewEleitorEditLink}"/>
-                <br />
-                <h:commandLink action="#{eleitorController.prepareCreate}" value="#{bundle.ViewEleitorCreateLink}" />
-                <br />
-                <h:commandLink action="#{eleitorController.prepareList}" value="#{bundle.ViewEleitorShowAllLink}"/>
-                <br />
-                <br />
-                <h:link outcome="/index" value="#{bundle.ViewEleitorIndexLink}"/>
-
+                <hr />
+                <h:panelGrid columns="5">
+                    <h:commandLink action="#{eleitorController.destroyAndView}" value="#{bundle.ViewEleitorDestroyLink}"/>
+                    <h:link outcome="Edit" value="#{bundle.ViewEleitorEditLink}"/>
+                    <h:commandLink action="#{eleitorController.prepareCreate}" value="#{bundle.ViewEleitorCreateLink}" />
+                    <h:commandLink action="#{eleitorController.prepareList}" value="#{bundle.ViewEleitorShowAllLink}"/>
+                    <h:link outcome="/index" value="#{bundle.ViewEleitorIndexLink}"/>
+                </h:panelGrid>
             </h:form>
         </ui:define>
     </ui:composition>

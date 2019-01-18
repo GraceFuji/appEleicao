@@ -7,28 +7,30 @@
 
     <ui:composition template="/template.xhtml">
         <ui:define name="title">
-            <h:outputText value="#{bundle.EditCargoTitle}"></h:outputText>
+            <center><h:outputText value="#{bundle.EditCargoTitle}"></h:outputText></center>
         </ui:define>
+        
+        <!--Exibição da mensagem de erro-->
+        
         <ui:define name="body">
             <h:panelGroup id="messagePanel" layout="block">
                 <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
             </h:panelGroup>
-            <h:form>
+            
+            <h:form style="width: 80%;border:solid #b2d5d6 3px;padding: 20px 40px 20px 20px;margin-left: 60px">
                 <h:panelGrid columns="2">
                     <h:outputLabel value="#{bundle.EditCargoLabel_id}" for="id" />
                     <h:inputText id="id" value="#{cargoController.selected.id}" title="#{bundle.EditCargoTitle_id}" required="true" requiredMessage="#{bundle.EditCargoRequiredMessage_id}"/>
                     <h:outputLabel value="#{bundle.EditCargoLabel_nome}" for="nome" />
                     <h:inputText id="nome" value="#{cargoController.selected.nome}" title="#{bundle.EditCargoTitle_nome}" required="true" requiredMessage="#{bundle.EditCargoRequiredMessage_nome}"/>
                 </h:panelGrid>
+                <hr/>
+                <h:panelGrid columns="4" cellpadding="12" cellspacing="1">
                 <h:commandLink action="#{cargoController.update}" value="#{bundle.EditCargoSaveLink}"/>
-                <br />
-                <br />
                 <h:link outcome="View" value="#{bundle.EditCargoViewLink}"/>
-                <br />
                 <h:commandLink action="#{cargoController.prepareList}" value="#{bundle.EditCargoShowAllLink}" immediate="true"/>
-                <br />
-                <br />
                 <h:link outcome="/index" value="#{bundle.EditCargoIndexLink}" />
+                </h:panelGrid>
             </h:form>
         </ui:define>
     </ui:composition>

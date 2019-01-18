@@ -7,14 +7,18 @@
 
     <ui:composition template="/template.xhtml">
         <ui:define name="title">
-            <h:outputText value="#{bundle.EditCandidatoTitle}"></h:outputText>
+            <center><h:outputText value="#{bundle.EditCandidatoTitle}"></h:outputText></center>
         </ui:define>
         <ui:define name="body">
+            
+            <!--Exibição da mensagem de erro-->
+            
             <h:panelGroup id="messagePanel" layout="block">
                 <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
             </h:panelGroup>
-            <h:form>
-                <h:panelGrid columns="2">
+            
+            <h:form  style="width: 80%;border:solid #b2d5d6 3px;padding: 20px 40px 20px 20px;margin-left: 60px">
+                <h:panelGrid columns="2" style="position: relative;left: 250px;">
                     <h:outputLabel value="#{bundle.EditCandidatoLabel_id}" for="id" />
                     <h:inputText id="id" value="#{candidatoController.selected.id}" title="#{bundle.EditCandidatoTitle_id}" required="true" requiredMessage="#{bundle.EditCandidatoRequiredMessage_id}"/>
                     <h:outputLabel value="#{bundle.EditCandidatoLabel_nome}" for="nome" />
@@ -26,15 +30,13 @@
                         <f:selectItems value="#{eleitorController.itemsAvailableSelectOne}"/>
                     </h:selectOneMenu>
                 </h:panelGrid>
-                <h:commandLink action="#{candidatoController.update}" value="#{bundle.EditCandidatoSaveLink}"/>
-                <br />
-                <br />
-                <h:link outcome="View" value="#{bundle.EditCandidatoViewLink}"/>
-                <br />
-                <h:commandLink action="#{candidatoController.prepareList}" value="#{bundle.EditCandidatoShowAllLink}" immediate="true"/>
-                <br />
-                <br />
-                <h:link outcome="/index" value="#{bundle.EditCandidatoIndexLink}" />
+                <hr/>
+                <h:panelGrid columns="4" cellpadding="14" cellspacing="2">
+                    <h:commandLink action="#{candidatoController.prepareList}" value="#{bundle.EditCandidatoShowAllLink}" immediate="true"/>
+                    <h:commandLink action="#{candidatoController.update}" value="#{bundle.EditCandidatoSaveLink}"/>
+                    <h:link outcome="View" value="#{bundle.EditCandidatoViewLink}"/>
+                    <h:link outcome="/index" value="#{bundle.EditCandidatoIndexLink}" />
+                </h:panelGrid>
             </h:form>
         </ui:define>
     </ui:composition>
