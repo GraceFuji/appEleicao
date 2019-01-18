@@ -5,6 +5,8 @@
  */
 package com.grace.dataa.eleicao.entities;
 
+import static com.grace.dataa.eleicao.entities.Eleitor_.cpf;
+import static com.grace.dataa.eleicao.entities.Eleitor_.nome;
 import java.io.Serializable;
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -17,6 +19,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
+import javax.persistence.metamodel.SingularAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
@@ -36,6 +39,8 @@ public class Votar implements Serializable {
     @ManyToOne(cascade = {})
     @JoinColumn(name = "id_candidato")
     private Candidato candidato;
+    private String cpf;
+    private String nome;
     
 
     public Votar() {
@@ -51,6 +56,21 @@ public class Votar implements Serializable {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+    
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+        public String getCpf() {
+        return cpf;
+    }
+
+    public void setcpf(String cpf) {
+        this.cpf = cpf;
     }
 
     /**
