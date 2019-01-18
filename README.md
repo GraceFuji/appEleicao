@@ -62,14 +62,15 @@ Relatório de Conquistas - Funcionalidade do Sistema
        
                 Área do Eleitor
          Votar somente se houver eleicao aberta         x
-     Exibir os cargos com os respectivos candidatos     x
+     Exibir os cargos com os respectivos candidatos     ✓
        Selecionar apenas uma candidato por cargo        ✓
              Botão de conclusão do voto                 ✓
                Protocolo do votante                     x
                
                
                    Relatórios
-        Relatório dividido em parcial e final           x
+                Relatório parcial           ✓
+                Relatório Final             x
         
         
           Requisições a parte do relatório
@@ -88,4 +89,7 @@ Relatório de Conquistas - Funcionalidade do Sistema
       
  --------------------------------------------------------------------------------------
  Prazo do teste
- 10 ias
+ 10 Dias
+---------------------------------------------------------------------------------------
+Prazo Extendido
+3 Dias
