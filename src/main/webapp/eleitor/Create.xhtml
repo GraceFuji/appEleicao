@@ -27,11 +27,16 @@
                     <h:selectOneMenu value="#{eleitorController.selected.candidato}" title="#{bundle.CreateEleitorTitle_candidato}" required="true" requiredMessage="#{bundle.CreateEleitorRequiredMessage_candidato}">
                         <f:selectItems value="#{candidatoController.itemsAvailableSelectOne}"/>
                     </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.CreateEleitorLabel_cargo}" for="cargo" />
+                    <h:selectOneMenu value="#{eleitorController.selected.cargo}" title="#{bundle.CreateEleitorTitle_cargo}" required="true" requiredMessage="#{bundle.CreateEleitorRequiredMessage_cargo}">
+                        <f:selectItems value="#{cargoController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
                     <h:outputLabel value="#{bundle.CreateEleitorLabel_eleicao}" for="eleicao" />
                     <h:selectOneMenu id="eleicao" value="#{eleitorController.selected.eleicao}" title="#{bundle.CreateEleitorTitle_eleicao}" required="true" requiredMessage="#{bundle.CreateEleitorRequiredMessage_eleicao}">
                         <f:selectItems value="#{eleicaoController.itemsAvailableSelectOne}"/>
                     </h:selectOneMenu>
                 </h:panelGrid>
+                
                 <hr />
                 <h:panelGrid columns="4">
                 <h:commandLink action="#{eleitorController.prepareList}" value="#{bundle.CreateEleitorShowAllLink}" immediate="true"/>

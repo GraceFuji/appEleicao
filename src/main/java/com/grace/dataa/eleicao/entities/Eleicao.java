@@ -118,7 +118,6 @@ public class Eleicao implements Serializable {
     public void setEleitor(Eleitor eleitor) {
         this.eleitor = eleitor;
     }
-
     @Override
     public int hashCode() {
         int hash = 0;

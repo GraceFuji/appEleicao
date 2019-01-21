@@ -17,14 +17,7 @@
             
             <center>
             <h:form style="width: 80%;border:solid #b2d5d6 3px;padding: 20px 10px 20px 10px;margin-left: 30px">
-                <style>
-                    .candidato, .candidato tr {display: inline; margin: 0; padding: 0}
-                    .candidato td {display: inline-block; text-align: left; width: 270px; margin: 0; padding: 10px; }
-                    .candidato input, .candidato label {font-family: Calibri}
-                </style>
-                <h:selectOneRadio styleClass="candidato" value="#{votarController.selected.candidato}">
-                    <f:selectItems value="#{candidatoController.items}" var="candidato" itemValue="#{candidato}" itemLabel="#{candidato.nome} - #{candidato.cargo}"  />
-                </h:selectOneRadio>
+
                 <hr />
                 <h:commandLink action="#{votarController.create}" value="#{bundle.CreateVotarSaveLink}" style="position: relative;left: 10px;"/>
 

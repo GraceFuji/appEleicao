@@ -57,6 +57,9 @@ public class Eleitor implements Serializable {
     @JoinColumn(name = "id", referencedColumnName = "id", insertable = false, updatable = false)
     @OneToOne(optional = false)
     private Eleicao eleicao;
+        @JoinColumn(name = "id", referencedColumnName = "id", insertable = false, updatable = false)
+    @OneToOne(optional = false)
+    private Cargo cargo;
 
     public Eleitor() {
     }
@@ -109,6 +112,14 @@ public class Eleitor implements Serializable {
 
     public void setEleicao(Eleicao eleicao) {
         this.eleicao = eleicao;
+    }
+    
+    public Cargo getCargo() {
+        return cargo;
+    }
+
+    public void setCargo(Cargo cargo) {
+        this.cargo = cargo;
     }
 
     @Override

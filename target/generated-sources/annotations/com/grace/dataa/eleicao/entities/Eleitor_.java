@@ -1,12 +1,13 @@
 package com.grace.dataa.eleicao.entities;
 
 import com.grace.dataa.eleicao.entities.Candidato;
+import com.grace.dataa.eleicao.entities.Cargo;
 import com.grace.dataa.eleicao.entities.Eleicao;
 import javax.annotation.Generated;
 import javax.persistence.metamodel.SingularAttribute;
 import javax.persistence.metamodel.StaticMetamodel;
 
-@Generated(value="EclipseLink-2.5.2.v20140319-rNA", date="2019-01-18T00:44:50")
+@Generated(value="EclipseLink-2.5.2.v20140319-rNA", date="2019-01-22T15:39:33")
 @StaticMetamodel(Eleitor.class)
 public class Eleitor_ { 
 
@@ -15,5 +16,6 @@ public class Eleitor_ {
     public static volatile SingularAttribute<Eleitor, String> nome;
     public static volatile SingularAttribute<Eleitor, Integer> id;
     public static volatile SingularAttribute<Eleitor, Candidato> candidato;
+    public static volatile SingularAttribute<Eleitor, Cargo> cargo;
 
 }

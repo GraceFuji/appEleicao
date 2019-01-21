@@ -49,13 +49,19 @@
                             <f:facet name="header">
                                 <center><h:outputText value="#{bundle.ListEleitorTitle_candidato}"/></center>
                             </f:facet>
-                            <h:outputText value="#{item.candidato}"/>
+                            <h:outputText value="#{item.candidato.nome}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <center><h:outputText value="#{bundle.ListEleitorTitle_cargo}"/></center>
+                            </f:facet>
+                            <h:outputText value="#{item.cargo.nome}"/>
                         </h:column>
                         <h:column>
                             <f:facet name="header">
                                 <center><h:outputText value="#{bundle.ListEleitorTitle_eleicao}"/></center>
                             </f:facet>
-                            <h:outputText value="#{item.eleicao}"/>
+                            <h:outputText value="#{item.eleicao.nome}"/>
                         </h:column>
                         <h:column>
                             <f:facet name="header">
@@ -77,37 +83,7 @@
                         </h:panelGrid>
                     
                     <hr />
-                    
-                    <h4>Relatório Parcial - Votos Computados</h4>
-                    
-                 <h:outputText escape="false" value="#{bundle.ListVotarEmpty}" rendered="#{votarController.items.rowCount == 0}"/>
-                <h:panelGroup rendered="#{votarController.items.rowCount > 0}">
-                    <h:commandLink action="#{votarController.previous}" value="#{bundle.Previous} #{votarController.pagination.pageSize}" rendered="#{votarController.pagination.hasPreviousPage}"/>&nbsp;
-                    <h:outputText value="#{votarController.pagination.pageFirstItem + 1}..#{votarController.pagination.pageLastItem + 1}/#{votarController.pagination.itemsCount}"/>&nbsp;
-                    <h:commandLink action="#{votarController.next}" value="#{bundle.Next} #{votarController.pagination.pageSize}" rendered="#{votarController.pagination.hasNextPage}"/>&nbsp;
-                
-                    <h:dataTable value="#{votarController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
-                        <h:column>
-                            <f:facet name="header">
-                                <center><h:outputText value="#{bundle.ListVotarTitle_id}"/></center>
-                            </f:facet>
-                            <h:outputText value="#{item.id}"/>
-                        </h:column>
-                        <h:column>
-                            <f:facet name="header">
-                                <center><h:outputText value="#{bundle.ListVotarTitle_nome}"/></center>
-                            </f:facet>
-                            <h:outputText value="#{item.nome}"/>
-                        </h:column>
-                        <h:column>
-                            <f:facet name="header">
-                                <center><h:outputText value="#{bundle.ListVotarTitle_cpf}"/></center>
-                            </f:facet>
-                            <h:outputText value="#{item.cpf}"/>
-                        </h:column>
-                        
-                    </h:dataTable>
-                </h:panelGroup>
+               
                 </h:panelGroup>
 
             </h:form>
