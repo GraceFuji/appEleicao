@@ -1,5 +1,5 @@
 # appEleicao
-# appEleicao
+
 Aplicação para cadastro e gerenciamento de uma eleicao interna de uma empresa. O aplicativo tem como público alvo pessoas que trabalham dentro de entidades de previdência complementar e que desejam realizar eleições para preencher cargos de dentro da própria entidade.
 
 -----------------------------------x----------------------------------x---------------
