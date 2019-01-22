@@ -1,4 +1,8 @@
 # appEleicao
+<<<<<<< HEAD
+=======
+
+>>>>>>> 58427d14e54c6c672baeecdb6f06285dfc601148
 Aplicação para cadastro e gerenciamento de uma eleicao interna de uma empresa. O aplicativo tem como público alvo pessoas que trabalham dentro de entidades de previdência complementar e que desejam realizar eleições para preencher cargos de dentro da própria entidade.
 
 -----------------------------------x----------------------------------x---------------
@@ -92,4 +96,8 @@ Relatório de Conquistas - Funcionalidade do Sistema
  10 Dias
 ---------------------------------------------------------------------------------------
 Prazo Extendido
+<<<<<<< HEAD
 3 Dias
+=======
+6 Dias
+>>>>>>> 58427d14e54c6c672baeecdb6f06285dfc601148
