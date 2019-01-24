@@ -5,6 +5,7 @@ com/grace/dataa/eleicao/controller/EleitorController$EleitorControllerConverter.
 com/grace/dataa/eleicao/entities/Candidato.class
 com/grace/dataa/eleicao/entities/Eleitor.class
 com/grace/dataa/eleicao/entities/Votar.class
+com/grace/dataa/eleicao/service/RelatorioFacade.class
 com/grace/dataa/eleicao/controller/VotarController$1.class
 com/grace/dataa/eleicao/controller/CandidatoController$1.class
 com/grace/dataa/eleicao/controller/EleitorController.class
@@ -17,9 +18,11 @@ com/grace/dataa/eleicao/controller/VotarController.class
 com/grace/dataa/eleicao/controller/EleicaoController$1.class
 com/grace/dataa/eleicao/controller/CandidatoController.class
 com/grace/dataa/eleicao/service/EleicaoFacade.class
+com/grace/dataa/eleicao/util/PaginationHelper$Date.class
 com/grace/dataa/eleicao/controller/EleicaoController$EleicaoControllerConverter.class
 com/grace/dataa/eleicao/entities/Cargo.class
 com/grace/dataa/eleicao/util/PaginationHelper.class
+com/grace/dataa/eleicao/controller/RelatorioController.class
 com/grace/dataa/eleicao/service/AbstractFacade.class
 com/grace/dataa/eleicao/controller/CargoController$1.class
 com/grace/dataa/eleicao/service/VotarFacade.class
@@ -28,6 +31,7 @@ com/grace/dataa/eleicao/entities/Eleicao.class
 com/grace/dataa/eleicao/service/EleitorFacade.class
 com/grace/dataa/eleicao/util/JsfUtil.class
 com/grace/dataa/eleicao/controller/CargoController.class
+com/grace/dataa/eleicao/entities/ItemRelatorioContagemVotos.class
 com/grace/dataa/eleicao/entities/Eleitor_.class
 com/grace/dataa/eleicao/entities/Eleicao_.class
 com/grace/dataa/eleicao/service/CargoFacade.class

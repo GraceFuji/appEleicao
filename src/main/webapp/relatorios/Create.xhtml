@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <center><h:outputText value="Relatório Final"/></center>
+        </ui:define>
+        
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+                        
+            <center>
+            <h:form style="width: 70%;border:solid #b2d5d6 3px;padding: 20px 10px 20px 10px;margin-left: 30px">
+                <h2><h:outputText value="Votos totais computados "/></h2>
+                
+                <h:dataTable value="#{relatorioController.votosCandidatos}" var="voto">
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{bundle.CreateEleicaoLabel_dataInicio}"/>
+                        </f:facet>
+                        <h:outputText value="#{voto.eleicao.dataInicio}" class="formatedDate" style="margin-left: 30px;"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{bundle.CreateEleicaoLabel_dataFim}" />
+                        </f:facet>
+                        <h:outputText value="#{voto.eleicao.dataFim}" class="formatedDate" style="margin-left: 40px;"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{bundle.CreateEleitorTitle_cargo}" />
+                        </f:facet>
+                        <center><h:outputText value="#{voto.cargo.nome}"/></center>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{bundle.CreateEleitorLabel_candidato}" />
+                        </f:facet>
+                        <center><h:outputText value="#{voto.candidato.nome}" /></center>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{bundle.CreateVotarShowAllLink}" />
+                        </f:facet>
+                        <center><h:outputText value="#{voto.contagem}"/></center>
+                    </h:column>
+                </h:dataTable>
+               
+                <h:link outcome="/index" value="#{bundle.CreateVotarIndexLink}" style="position: relative;left: 40%;"/>
+            </h:form>
+            </center>
+        </ui:define>
+        
+    </ui:composition>
+
+</html>

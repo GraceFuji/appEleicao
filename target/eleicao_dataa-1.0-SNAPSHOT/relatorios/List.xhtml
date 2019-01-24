@@ -47,20 +47,7 @@
                         </h:column>   
                     </h:dataTable>
                 </h:panelGroup>
-                
-                        <h:column>
-                    <style>
-                        .candidato, .candidato tr {display: inline; margin: 0; padding: 0}
-                        .candidato td {display: inline-block; text-align: left; width: 270px; margin: 0; padding: 10px; }
-                        .candidato input, .candidato label {font-family: Calibri}
-                    </style>
-                            
-                            <h:selectOneRadio styleClass="candidato" value="#{votarController.selected.candidato}">
-                                <f:selectItems value="#{candidatoController.items}" var="candidato" itemValue="#{candidato}" itemLabel="#{candidato.nome} - #{candidato.cargo}"  />
-                            </h:selectOneRadio>
-                            
-                        </h:column>
-                <br />
+
                     <h:commandLink action="#{votarController.create}" value="#{bundle.CreateVotarSaveLink}" style="position: relative;left: 200px;"/>
 
                     <h:link outcome="/index" value="#{bundle.ListVotarIndexLink}" style="position: relative;left: 300px;" />

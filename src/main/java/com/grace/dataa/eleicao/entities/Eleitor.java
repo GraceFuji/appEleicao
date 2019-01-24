@@ -5,7 +5,6 @@
  */
 package com.grace.dataa.eleicao.entities;
 
-import com.grace.dataa.eleicao.entities.Candidato;
 import java.io.Serializable;
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -51,13 +50,13 @@ public class Eleitor implements Serializable {
     @Size(min = 1, max = 50)
     @Column(name = "cpf")
     private String cpf;
-    @JoinColumn(name = "id", referencedColumnName = "id", insertable = false, updatable = false)
+    @JoinColumn(name = "id_candidato")
     @OneToOne(optional = false)
     private Candidato candidato;
-    @JoinColumn(name = "id", referencedColumnName = "id", insertable = false, updatable = false)
+    @JoinColumn(name = "id_eleicao")
     @OneToOne(optional = false)
     private Eleicao eleicao;
-        @JoinColumn(name = "id", referencedColumnName = "id", insertable = false, updatable = false)
+    @JoinColumn(name = "id_cargo")
     @OneToOne(optional = false)
     private Cargo cargo;
 
